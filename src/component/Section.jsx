@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import user_profile from "../asset/image/user_profile.png";
 import { MdEmail } from "react-icons/md";
+import { MdOutlineContentCopy } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { useState } from "react";
 
 export default function Section() {
+  const [isCopy, setIsCopy] = useState(false);
+
   return (
     <Container>
       <img
@@ -39,6 +44,14 @@ export default function Section() {
         <div className="contact">
           <MdEmail className="icon mail-icon" />
           <span>hongmikyeong11@gmail.com</span>
+          <span>
+            <CopyToClipboard
+              text="hongmikyeong11@gmail.com"
+              onCopy={() => setIsCopy(true)}
+            >
+              <MdOutlineContentCopy className="copy-icon" />
+            </CopyToClipboard>
+          </span>
         </div>
 
         <div className="contact">
@@ -105,11 +118,32 @@ const Container = styled.section`
     color: #4284f3;
   }
 
+  .copy-icon {
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+
   .github-icon {
     color: black;
   }
 
   .select-none {
     user-select: none;
+  }
+
+  @media (min-width: 1441px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .intro,
+    .contact {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+
+    .icon {
+      font-size: 2rem;
+    }
   }
 `;
