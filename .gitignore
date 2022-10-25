@@ -1,5 +1,6 @@
 .DS_STORE
 src/asset/image/user_profile.png
+src/data
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
