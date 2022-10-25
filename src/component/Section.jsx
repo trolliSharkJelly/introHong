@@ -4,11 +4,8 @@ import { MdEmail } from "react-icons/md";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useState } from "react";
 
 export default function Section() {
-  const [isCopy, setIsCopy] = useState(false);
-
   return (
     <Container>
       <img
@@ -45,10 +42,7 @@ export default function Section() {
           <MdEmail className="icon mail-icon" />
           <span>hongmikyeong11@gmail.com</span>
           <span>
-            <CopyToClipboard
-              text="hongmikyeong11@gmail.com"
-              onCopy={() => setIsCopy(true)}
-            >
+            <CopyToClipboard text="hongmikyeong11@gmail.com">
               <MdOutlineContentCopy className="copy-icon" />
             </CopyToClipboard>
           </span>
