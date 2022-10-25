@@ -63,15 +63,12 @@ export default function Section() {
 }
 
 const Container = styled.section`
-  border: 1px solid black;
-
-  width: 35%;
   height: 100vh;
-  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: white;
   padding: 1rem 2rem;
 
   .profile-image {
@@ -128,12 +125,13 @@ const Container = styled.section`
   @media (min-width: 1441px) {
     h1 {
       font-size: 2rem;
+      line-height: 3rem;
     }
 
     .intro,
     .contact {
-      font-size: 1.5rem;
-      line-height: 2.5rem;
+      font-size: 1.3rem;
+      line-height: 2.3rem;
     }
 
     .icon {
