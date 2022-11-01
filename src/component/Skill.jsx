@@ -1,27 +1,32 @@
 import styled from "styled-components";
 
-export default function Skill() {
+export default function Skill({ data }) {
   return (
     <Container>
-      <h1>해당 페이지는 작업 중인 페이지입니다.</h1>
-      <h3>현재 페이지 : '기술' 페이지</h3>
+      <img src={data.src} alt={data.alt} />
+      <span className="name">{data.name}</span>
     </Container>
   );
 }
 
-const Container = styled.section`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  h1 {
-    font-size: 4rem;
+  img {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid #d5d5d5;
+    border-radius: 0.5rem;
+    padding: 0.1rem;
+    margin-bottom: 0.5rem;
   }
 
-  h3 {
-    font-size: 2rem;
-    margin-top: 1rem;
-    color: #616161;
+  .name {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 `;
