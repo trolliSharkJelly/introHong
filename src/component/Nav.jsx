@@ -1,10 +1,24 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { btnData } from "../data/data";
+import { GrSun } from "react-icons/gr";
+import { BsFillMoonFill } from "react-icons/bs";
+import "../asset/style/style.css";
+import { useDispatch, useSelector } from "react-redux";
+import { modeSlice } from "../slice/modeSlice";
 
 export default function Nav() {
+  const { mode } = useSelector((state) => state.mode);
+  const dispatch = useDispatch();
+
   return (
     <Container>
+      <button
+        onClick={() => dispatch(modeSlice.actions.setMode({ mode: !mode }))}
+      >
+        {mode ? <BsFillMoonFill className="icon" /> : <GrSun />}
+      </button>
+
       {btnData.map((value, idx) => (
         <button key={idx}>
           <Link to={value.to} className="link">
@@ -22,33 +36,41 @@ const Container = styled.nav`
   flex-direction: column;
   justify-content: space-around;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: ${({ theme }) => theme.nav_color};
 
   button {
     display: flex;
     justify-content: center;
-    background-color: #f5f5f5;
+    align-items: center;
+    background-color: ${({ theme }) => theme.nav_color};
     border: 0;
     outline: 0;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
+    height: calc(40vh / var(--button-number));
   }
 
-  .link:hover {
-    background-color: #d5d5d5;
-    border-radius: 4px;
+  button * {
+    background-color: ${({ theme }) => theme.nav_color};
   }
+
+  /* button .link:hover {
+    background-color: ${({ theme }) => theme.button_hover_color};
+    border-radius: 4px;
+  } */
 
   .icon {
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
+    background-color: ${({ theme }) => theme.nav_color};
   }
 
   .link {
     width: 100%;
+    background-color: ${({ theme }) => theme.nav_color};
     text-decoration: none;
     color: black;
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   @media (min-width: 1441px) {
