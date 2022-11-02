@@ -4,7 +4,6 @@ import { MdEmail } from "react-icons/md";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import "../asset/style/style.css";
 
 export default function Section() {
   return (
@@ -79,7 +78,7 @@ const Container = styled.section`
   .profile-image {
     width: 8rem;
     height: 8rem;
-    border: 1px solid var(--color-black);
+    border: 1px solid black;
     border-radius: 50%;
   }
 
@@ -118,10 +117,6 @@ const Container = styled.section`
     align-items: center;
     line-height: 2.5rem;
     font-size: 1.2rem;
-
-    a {
-      text-decoration: none;
-    }
   }
 
   .icon {
@@ -156,4 +151,3 @@ const Container = styled.section`
     }
   }
 `;
-/* color: ${(props) => props.theme.section.color}; */

@@ -38,6 +38,14 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   background-color: ${({ theme }) => theme.background_color};
   color: ${({ theme }) => theme.color};
+  
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 `;
 

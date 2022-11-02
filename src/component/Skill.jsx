@@ -4,7 +4,7 @@ export default function Skill({ data }) {
   return (
     <Container>
       <img src={data.src} alt={data.alt} />
-      <span className="name">{data.name}</span>
+      <span>{data.name}</span>
     </Container>
   );
 }
@@ -25,7 +25,7 @@ const Container = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  .name {
+  span {
     font-size: 1.2rem;
     font-weight: 600;
   }

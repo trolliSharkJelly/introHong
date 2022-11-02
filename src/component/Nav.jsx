@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { btnData } from "../data/data";
 import { GrSun } from "react-icons/gr";
 import { BsFillMoonFill } from "react-icons/bs";
-import "../asset/style/style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { modeSlice } from "../slice/modeSlice";
 
@@ -48,17 +47,12 @@ const Container = styled.nav`
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    height: calc(40vh / var(--button-number));
+    height: calc(40vh / 5);
   }
 
   button * {
     background-color: ${({ theme }) => theme.nav_color};
   }
-
-  /* button .link:hover {
-    background-color: ${({ theme }) => theme.button_hover_color};
-    border-radius: 4px;
-  } */
 
   .icon {
     margin-right: 0.5rem;
