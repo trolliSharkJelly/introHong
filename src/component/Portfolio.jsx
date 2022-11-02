@@ -5,22 +5,26 @@ export default function Portfolio({ data }) {
     <Container>
       <div>
         <h2>{data.title}</h2>
+
         <p className="date">{data.date}</p>
+
         <p>
           <span className="title">{data.introduce}</span>
         </p>
+
         <p>
           <span className="title simple">깃허브</span>
           <a href={data.githubLink} className="content">
             {data.githubLink}
           </a>
         </p>
+
         <p>
           <span className="title simple">사용 기술</span>
           {data.skills.map((value, idx) => (
-            <Skill key={idx} className="skill content">
+            <span key={idx} className="skill content">
               {value.name}
-            </Skill>
+            </span>
           ))}
         </p>
       </div>
@@ -91,13 +95,12 @@ const Container = styled.div`
     line-height: 2.5rem;
   }
 
-  /* .skill {
+  .skill {
     margin-right: 0.5rem;
-    border: 1px solid white;
     border-radius: 4px;
     padding: 0.2rem;
-    color: ${(props) => props.inputColor};
-  } */
+    background-color: ${({ theme }) => theme.portfolio_skill_bgColor};
+  }
 
   .content {
     color: ${({ theme }) => theme.box_gray_color};
@@ -116,6 +119,7 @@ const Container = styled.div`
       margin: 0.5rem 0;
       font-size: 1.1rem;
     }
+
     hr {
       margin: 1rem 0;
       border: 0;
@@ -123,19 +127,4 @@ const Container = styled.div`
       background-color: #b5b5b5;
     }
   }
-
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Skill = styled.span`
-  margin-right: 0.5rem;
-  border-radius: 4px;
-  padding: 0.2rem;
-  background-color: ${({ theme }) => theme.portfolio_skill_bgColor};
 `;
