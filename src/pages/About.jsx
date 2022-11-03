@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import user_profile from "../asset/image/user_profile.png";
+import user_profile from "../asset/image/user_profile.jpeg";
 import { MdEmail } from "react-icons/md";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
@@ -17,26 +17,24 @@ export default function Section() {
       <h1>
         안녕하세요,
         <br />
-        프론트엔드 개발자가 되고 싶은
-        <br />
-        홍미경입니다.
+        프론트엔드 개발자 홍미경입니다.
       </h1>
 
       <article>
         <p className="intro">
+          자신의 <strong className="growth">성장</strong>을 위해 새로운 것에
+          대한 경험을 두려워하지 않습니다.
+        </p>
+        <p className="intro">
           주어진 목표와 업무가 있다면 포기하지 않고 완수합니다. 포기하지 않음은
-          곧 상대방에게 주는 <strong className="trust">신뢰</strong>이며,
-          자신과의 <strong className="promise">약속</strong>이라 생각하기
+          곧 상대방에게 주는 <strong className="trust">신뢰</strong>
+          이며, 자신과의 <strong className="promise">약속</strong>이라 생각하기
           때문입니다.
         </p>
         <p className="intro">
           사용자가 웹에서 제공하는 정보를 차별 및 제한 없이{" "}
           <strong className="equal">동등</strong>하게 이용할 수 있는 사이트를
           만들고 싶습니다.
-        </p>
-        <p className="intro">
-          프론트엔드 개발자를 지원하기 위해 6개월 과정의 코드스테이츠 부트캠프를
-          수료했으며, 더 많은 지식을 얻고자 타입스크립트를 공부 중입니다.
         </p>
       </article>
 
@@ -76,9 +74,8 @@ const Container = styled.section`
   }
 
   .profile-image {
-    width: 8rem;
-    height: 8rem;
-    border: 1px solid black;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
   }
 
@@ -91,13 +88,19 @@ const Container = styled.section`
   .intro {
     font-size: 1.3rem;
     line-height: 2.5rem;
+    text-align: center;
   }
 
+  .growth,
   .trust,
   .promise,
   .equal {
     padding: 0.2rem;
     border-radius: 4px;
+  }
+
+  .growth {
+    background-color: #e39b9b;
   }
 
   .trust {
@@ -109,7 +112,7 @@ const Container = styled.section`
   }
 
   .equal {
-    background-color: #d58bdd;
+    background-color: #a6aee8;
   }
 
   .contact {
