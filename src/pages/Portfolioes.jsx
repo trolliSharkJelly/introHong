@@ -5,7 +5,7 @@ import Portfolio from "../component/Portfolio";
 export default function Portfolioes() {
   return (
     <Container>
-      <h2 className="year">포트폴리오</h2>
+      <h2 className="year">프로젝트</h2>
 
       <div className="item">
         {portfolioData.map((value, idx) => (

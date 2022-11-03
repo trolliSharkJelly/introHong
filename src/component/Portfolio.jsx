@@ -42,15 +42,13 @@ export default function Portfolio({ data }) {
       {data.thoughts && (
         <div className="thoughts">
           <hr />
-          <p className="title">
-            해당 포트폴리오를 개발하게 된 계기가 어떻게 되나요?
-          </p>
+          <p className="title">기획 배경</p>
           <p className="content">{data.thoughts.how}</p>
 
-          <p className="title">개발 당시 어려웠던 점은 무엇인가요?</p>
+          <p className="title">개발 당시 어려웠던 점과 극복 과정</p>
           <p className="content">{data.thoughts.difficult}</p>
 
-          <p className="title">개발 후 느낀 점은 무엇인가요?</p>
+          <p className="title">개발 후 느낀 점</p>
           <p className="content">{data.thoughts.feeling}</p>
         </div>
       )}
