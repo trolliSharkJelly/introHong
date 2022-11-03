@@ -15,7 +15,11 @@ export default function Nav() {
       <button
         onClick={() => dispatch(modeSlice.actions.setMode({ mode: !mode }))}
       >
-        {mode ? <BsFillMoonFill className="icon" /> : <GrSun />}
+        {mode ? (
+          <BsFillMoonFill className="icon dark_mode" />
+        ) : (
+          <GrSun className="light_mode" />
+        )}
       </button>
 
       {btnData.map((value, idx) => (
@@ -52,6 +56,19 @@ const Container = styled.nav`
 
   button * {
     background-color: ${({ theme }) => theme.nav_color};
+  }
+
+  .dark_mode,
+  .light_mode {
+    font-size: 2rem;
+  }
+
+  .light_mode {
+    fill: #dd5353;
+  }
+
+  .dark_mode {
+    fill: #fce700;
   }
 
   .icon {
